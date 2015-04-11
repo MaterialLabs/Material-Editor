@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app = 'Material-Editor'>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Material Editor</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body layout="column" ng-controller="AceCtrl">
+        <div id = "frame" layout = "row">
+            <ng-md-icon icon="clear" size="22" id  = "close" ng-click = "close()"></ng-md-icon>
+            <ng-md-icon icon="remove" size="22" id  = "minimize" ng-click = "minimize()"></ng-md-icon>
+            <ng-md-icon icon="fullscreen" size="22" id = "maximize" ng-click = "maximize()"></ng-md-icon>
+        </div>
+        <md-toolbar>
+            <div layout = "row" class = "md-toolbar-tools">
+                <h3>Material Editor</h3>
+                <span flex></span>
+                <span layout-align = "end center" id = "tool-fix">
+                    <md-select ng-model="theme" ng-change="themeChanged()">
+                        <md-option ng-repeat = "t in themes" value="{{t}}">{{t}}</md-option>
+                    </md-select>
+                    <md-select ng-model="mode" ng-change="modeChanged()">
+                        <md-option ng-repeat = "m in modes" value="{{m}}">{{m}}</md-option>
+                    </md-select>
+                </span>
+            </div>
+            <div layout = "row">
+                <md-tabs class="md-primary md-hue-2" md-selected="tab1" md-stretch-tabs>
+                  <md-tab id="tab1" aria-controls="tab1-content">
+                    index.html
+                  </md-tab>
+                  <md-tab id="tab2" aria-controls="tab2-content">
+                    main.js
+                  </md-tab>
+                  <md-tab id="tab3" aria-controls="tab3-content">
+                    main.css
+                  </md-tab>
+                </md-tabs>
+                <md-button class = "md-accent" id = "addTab">+</md-button>
+            </div>
+        </md-toolbar>
+
+        <div ui-ace = "aceOption" ng-model="aceModel" id = "editor" flex></div>
+        <div layout = "row" id = "footer" ng-controller = "footerController">
+            <span flex = "70"></span>
+            <div layout = "row" layout-align = "end center" flex = "30">
+                <md-slider flex ng-model="myFontSize" ng-change = "changeFontSize()" min="10" max="25" id="font-size-slider" class="md-accent">
+                </md-slider>
+                <md-input-container id = "fontInput">
+                    <label>{{myFontSize}}</label>
+                </md-input-container>
+            </div>
+        </div>
+
+        <!-- ANGULAR STUFF -->
+        <script src="./bower_components/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src = "js/jquery-2.1.3.js"></script>
+        <script src="./bower_components/angular-route/angular-route.js"></script>
+        <script src="./bower_components/angular-aria/angular-aria.js"></script>
+        <script src="./bower_components/angular-animate/angular-animate.js"></script>
+        <script src="./bower_components/angular-material/angular-material.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.js"></script>
+        <!-- ICONS -->
+        <script src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+        <!-- MAIN FILE -->
+        <script src="js/main.js"></script>
+        <script src = "js/nwFactory.js"></script>
+    </body>
+</html>

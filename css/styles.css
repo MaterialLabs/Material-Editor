@@ -1,0 +1,61 @@
+#frame {
+  width: 100%;
+  height: 25px;
+  background-color: #2196F3;
+  -webkit-app-region: drag;
+  -webkit-user-select: none; }
+
+#toolbar {
+  -webkit-user-select: none; }
+
+#tool-fix {
+  padding-bottom: 30px; }
+
+#editor {
+  font-size: 16px; }
+
+#footer {
+  width: 100%;
+  height: 50px;
+  background-color: #3F51B5; }
+
+#font-size-slider {
+  padding-right: 30px; }
+
+#fontInput {
+  position: absolute;
+  right: 5px;
+  bottom: 15px; }
+
+#close {
+  fill: #3F51B5;
+  opacity: .7; }
+  #close:hover {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    fill: #3F51B5;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2); }
+
+#minimize {
+  fill: #3F51B5;
+  opacity: .7; }
+  #minimize:hover {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    fill: #3F51B5;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2); }
+
+#maximize {
+  fill: #3F51B5;
+  opacity: .7; }
+  #maximize:hover {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    fill: #3F51B5;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2); }
