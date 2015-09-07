@@ -3,7 +3,8 @@
 ![Material Editor](assets/Editor-large.png)
 
 Material Editor is an open-source text editor for Mac build using [nw.js](http://nwjs.io),  [Ace](http://ace.c9.io) and [Angular Material](https://material.angularjs.org/#/). 
-Feel free to contribue and improve the editor, right now the functionality is pretty basic (the project is quite young).
+
+**This is mostly left here for historical purposes, it is no longer supported.**
 
 ##TODO
 - Add functionality to tabs with routing
